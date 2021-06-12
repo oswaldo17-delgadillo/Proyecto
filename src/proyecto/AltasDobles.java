@@ -586,7 +586,7 @@ public class AltasDobles extends javax.swing.JInternalFrame {
     private void jButtonHabitacion101ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion101ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion101.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2,1200);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -596,7 +596,7 @@ public class AltasDobles extends javax.swing.JInternalFrame {
     private void jButtonHabitacion104ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion104ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion104.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2,1200);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -606,7 +606,7 @@ public class AltasDobles extends javax.swing.JInternalFrame {
     private void jButtonHabitacion110ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion110ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion110.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2,1200);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -616,7 +616,7 @@ public class AltasDobles extends javax.swing.JInternalFrame {
     private void jButtonHabitacion113ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion113ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion113.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2,1200);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -626,7 +626,7 @@ public class AltasDobles extends javax.swing.JInternalFrame {
     private void jButtonHabitacion117ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion117ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion117.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2,1200);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -635,7 +635,7 @@ public class AltasDobles extends javax.swing.JInternalFrame {
 
     private void jButtonHabitacion118ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion118ActionPerformed
         habitacion = this.jButtonHabitacion118.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2,1200);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -645,7 +645,7 @@ public class AltasDobles extends javax.swing.JInternalFrame {
     private void jButtonHabitacion119ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion119ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion119.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2,1200);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -655,7 +655,7 @@ public class AltasDobles extends javax.swing.JInternalFrame {
     private void jButtonHabitacion125ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion125ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion125.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2,1200);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -665,7 +665,7 @@ public class AltasDobles extends javax.swing.JInternalFrame {
     private void jButtonHabitacion126ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion126ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion126.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2,1200);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -675,7 +675,7 @@ public class AltasDobles extends javax.swing.JInternalFrame {
     private void jButtonHabitacion127ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion127ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion127.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Doble",2,1200);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);

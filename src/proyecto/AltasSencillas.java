@@ -611,7 +611,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion100ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion100.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -621,7 +621,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion102ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion102ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion102.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -631,7 +631,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion103ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion103ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion103.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -641,7 +641,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion105ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion105ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion105.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -651,7 +651,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion109ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion109ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion109.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -661,7 +661,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion111ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion111ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion111.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -671,7 +671,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion112ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion112ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion112.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -681,7 +681,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion114ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion114ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion114.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -691,7 +691,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion115ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion115ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion115.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -701,7 +701,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion121ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion121ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion121.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -711,7 +711,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion122ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion122ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion122.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -721,7 +721,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion123ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion123ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion123.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -731,7 +731,7 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion129ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion129ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion129.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);

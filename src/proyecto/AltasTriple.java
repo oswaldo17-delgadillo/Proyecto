@@ -579,7 +579,7 @@ public class AltasTriple extends javax.swing.JInternalFrame {
     private void jButtonHabitacion106ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion106ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion106.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3,1600);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -589,7 +589,7 @@ public class AltasTriple extends javax.swing.JInternalFrame {
     private void jButtonHabitacion107ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion107ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion107.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3,1600);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -599,7 +599,7 @@ public class AltasTriple extends javax.swing.JInternalFrame {
     private void jButtonHabitacion108ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion108ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion108.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3,1600);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -609,7 +609,7 @@ public class AltasTriple extends javax.swing.JInternalFrame {
     private void jButtonHabitacion116ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion116ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion116.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3,1600);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -619,7 +619,7 @@ public class AltasTriple extends javax.swing.JInternalFrame {
     private void jButtonHabitacion120ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion120ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion120.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3,1600);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -629,7 +629,7 @@ public class AltasTriple extends javax.swing.JInternalFrame {
     private void jButtonHabitacion124ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion124ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion124.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3,1600);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
@@ -639,7 +639,7 @@ public class AltasTriple extends javax.swing.JInternalFrame {
     private void jButtonHabitacion128ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion128ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion128.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Triple",3,1600);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);

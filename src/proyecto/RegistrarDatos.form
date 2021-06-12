@@ -95,12 +95,18 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jSpinnerHuespedes" min="-2" pref="51" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jTextFieldTipo" max="32767" attributes="0"/>
                                           <Component id="jTextFieldNumHabitacion" pref="206" max="32767" attributes="0"/>
                                           <Component id="jTextFieldNombre" alignment="0" pref="206" max="32767" attributes="0"/>
                                           <Component id="jDateChooserFechaEntrada" alignment="0" pref="206" max="32767" attributes="0"/>
                                           <Component id="jSpinnerDiasHospedaje" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
                                           <Component id="jTextFieldCiudadOrigen" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jTextFieldTipo" min="-2" pref="77" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldCosto" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
@@ -127,6 +133,8 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jTextFieldTipo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldCosto" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -153,7 +161,7 @@
                       <Component id="jSpinnerHuespedes" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                  <EmptySpace pref="23" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jRadioButtonSi" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jRadioButtonNo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -292,6 +300,16 @@
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
             <Property name="text" type="java.lang.String" value="Huespedes:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Costo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldCosto">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>

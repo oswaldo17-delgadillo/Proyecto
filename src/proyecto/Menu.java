@@ -90,6 +90,11 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.add(jMenuAltas);
 
         jMenuBajas.setText("Salida");
+        jMenuBajas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuBajasMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenuBajas);
 
         jMenuConsultas.setText("Consultas");
@@ -139,6 +144,13 @@ public class Menu extends javax.swing.JFrame {
         this.jDesktopPaneEscritorio.add(altas);
         altas.show();
     }//GEN-LAST:event_jMenuItemDobleActionPerformed
+
+    private void jMenuBajasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBajasMouseClicked
+        // TODO add your handling code here:
+        Salida bajas = new Salida();
+        this.jDesktopPaneEscritorio.add(bajas);
+        bajas.show();
+    }//GEN-LAST:event_jMenuBajasMouseClicked
 
     /**
      * @param args the command line arguments
