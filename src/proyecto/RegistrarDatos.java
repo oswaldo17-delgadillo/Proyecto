@@ -8,6 +8,7 @@ package proyecto;
 import controlMySql.MySqlConn;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 
@@ -317,6 +318,8 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
         
         this.conn.Update(query);
         
+        query = "UPDATE habitaciones SET estado = 'Ocupada'  WHERE habitacion = " + this.jTextFieldNumHabitacion.getText();
+        this.conn.Update(query);
         
         Voucher comprobante;
         comprobante = new Voucher(nombre,ciudad, fechaent,fechasal,this.tipo,this.habitacion, this.ocupantes, (ocup+ext), ext);
@@ -336,6 +339,7 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
     private void jRadioButtonSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonSiActionPerformed
         // TODO add your handling code here:
         this.jSpinnerPersonasEx.setEnabled(true);
+        JOptionPane.showMessageDialog(this, "Se cobrara un cargo extra de $200 por persona");
     }//GEN-LAST:event_jRadioButtonSiActionPerformed
 
 

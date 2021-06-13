@@ -6,15 +6,23 @@
 package proyecto;
 
 import controlMySql.MySqlConn;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import org.apache.pdfbox.pdmodel.*;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
+
 
 /**
  *
@@ -24,7 +32,7 @@ public class Salida extends javax.swing.JInternalFrame {
 
     MySqlConn conn;
     private String nombre, ciudad, fechaIn, fechaSa, tipoHab, numHab; 
-    private int  dias, total = 0, totalS, costo; 
+    private int  dias, total = 0, totalS, costo, ex; 
     /**
      * Creates new form Salida
      */
@@ -95,7 +103,7 @@ public class Salida extends javax.swing.JInternalFrame {
 
         jCheckBoxServSpa.setText("Servicio de SPA");
 
-        jCheckBoxServNiñera.setText("Servicio de niñera");
+        jCheckBoxServNiñera.setText("Servicio de guarderia/niñera");
 
         jCheckBoxServBuffet.setText("Servicio de buffet");
 
@@ -256,7 +264,7 @@ public class Salida extends javax.swing.JInternalFrame {
         
        
         try {
-           int ex = this.conn.rs.getInt(5);
+           ex = this.conn.rs.getInt(5);
            if( ex > 0 )
             total += (ex * 200);
         } catch (SQLException ex1) {
@@ -293,12 +301,165 @@ public class Salida extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        
+        Date fecha = new Date();
+        SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
         String query = "insert into ingresos VALUES ( id ,'" + this.jTextFieldMontoPagar.getText().trim() + "')";
         this.conn.Update(query);
         query = "delete from registros where habitacion = " + this.jTextFieldHabitacion.getText().trim();
         this.conn.Update(query);
-        
+        query = "UPDATE habitaciones SET estado = 'Descupada'  WHERE habitacion = " + this.numHab;
+        this.conn.Update(query);
+        int i = 2;
+        try (PDDocument document = new PDDocument()) {
+            PDPage page = new PDPage(PDRectangle.A6);
+            document.addPage(page);
+            
+            PDPageContentStream contentStream = new PDPageContentStream(document, page);
+          
+            PDImageXObject image = PDImageXObject.createFromFile("src/imagenes/gowa.jpg", document);
+            
+            contentStream.drawImage(image, 95 , 370, image.getWidth() / 3, image.getHeight() / 3);
+            
+            image = PDImageXObject.createFromFile("src/imagenes/firma.png", document);
+            
+            contentStream.drawImage(image, 95 , 15, image.getWidth() / 3, image.getHeight() / 3);
+            
+            // Text
+            
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - 50);
+            contentStream.showText("GOWA Hotel");
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+15));
+            contentStream.showText("Sueños pesados, costos ligeros");
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+            contentStream.showText("Blvd. Kukulcan Km 7.5, Punta Cancun, 77500 Cancún, Q.R.");
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+            contentStream.showText("Fecha: " + form.format(fecha));
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+            contentStream.showText("Nombre del huésped: " + this.nombre);
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+            contentStream.showText("Ciudad de origen: " + this.ciudad );
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+            contentStream.showText("Fecha de ingreso: " + this.fechaIn );
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+            contentStream.showText("Fecha de salida: " + this.fechaSa );
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+            contentStream.showText("Tipo de habitación: " + this.tipoHab );
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+            contentStream.showText("Costo de habitacion: " + this.costo );
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+            contentStream.showText("Días que se quedo en el hotel: " + this.dias );
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() -(50+(15*i++)));
+            contentStream.showText("Total a pagar sin cargos extra: " + this.totalS );
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+            contentStream.showText("Total a pagar con cargos extra: " + this.total );
+            contentStream.endText();
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+            contentStream.showText("Lista de cargos extra:");
+            contentStream.endText();
+            if(this.ex>0){
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Cargo por personas extra: " + (this.ex * 200));
+                contentStream.endText();
+            }
+            if(this.jCheckBoxServCuarto.isSelected()){
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Cargo por servicio al cuarto: 250");
+                contentStream.endText();
+            }
+            
+            if(this.jCheckBoxServBar.isSelected()){
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Cargo por servicio de bar: 800");
+                contentStream.endText();
+            }
+            
+            if(this.jCheckBoxServNiñera.isSelected()){
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Cargo por servicio de niñera/Guarderia: 700");
+                contentStream.endText();
+            }
+            if(this.jCheckBoxServTinto.isSelected()){
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Cargo por servicio de tintoreria: 180");
+                contentStream.endText();
+            }
+            if(this.jCheckBoxServSpa.isSelected()){
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Cargo por servicio de spa: 600");
+                contentStream.endText();
+            }
+            if(this.jCheckBoxServBuffet.isSelected()){
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Cargo por servicio de buffet: 300");
+                contentStream.endText();
+            }
+            
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.COURIER, 8);
+            contentStream.newLineAtOffset(50, 5);
+            contentStream.showText("Gracias por preferirnos, vuelva pronto!!");
+            contentStream.endText();
+            contentStream.close();
+
+
+            document.save("ticket.pdf");
+        } catch (IOException ex) {
+        }
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

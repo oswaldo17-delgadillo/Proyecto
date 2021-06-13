@@ -5,6 +5,8 @@
  */
 package proyecto;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Adrian
@@ -57,6 +59,10 @@ public class Voucher extends javax.swing.JInternalFrame {
         jLabelTotOcupantes = new javax.swing.JLabel();
         jLabelReg = new javax.swing.JLabel();
         jLabelPerEx = new javax.swing.JLabel();
+        jLabelImagen = new javax.swing.JLabel();
+        jLabelHotel = new javax.swing.JLabel();
+        jLabelLema = new javax.swing.JLabel();
+        jLabelDireccion = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -103,6 +109,14 @@ public class Voucher extends javax.swing.JInternalFrame {
 
         jLabelPerEx.setText("jLabel3");
 
+        jLabelImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabelHotel.setText("jLabel1");
+
+        jLabelLema.setText("jLabel1");
+
+        jLabelDireccion.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -110,27 +124,42 @@ public class Voucher extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelNombre)
-                    .addComponent(jLabelCiudad)
-                    .addComponent(jLabelFechaIn)
-                    .addComponent(jLabelFechaSa)
-                    .addComponent(jLabelTotOcupantes)
+                    .addComponent(jLabelImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelNumHabitacion)
-                            .addComponent(jLabelTipoHab))
-                        .addGap(72, 72, 72)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelLimHuespedes)
-                            .addComponent(jLabelPiso)))
-                    .addComponent(jLabelReg)
-                    .addComponent(jLabelPerEx))
-                .addContainerGap(244, Short.MAX_VALUE))
+                            .addComponent(jLabelNombre)
+                            .addComponent(jLabelCiudad)
+                            .addComponent(jLabelFechaIn)
+                            .addComponent(jLabelFechaSa)
+                            .addComponent(jLabelTotOcupantes)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelNumHabitacion)
+                                    .addComponent(jLabelTipoHab))
+                                .addGap(72, 72, 72)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelLimHuespedes)
+                                    .addComponent(jLabelPiso)))
+                            .addComponent(jLabelReg)
+                            .addComponent(jLabelPerEx)
+                            .addComponent(jLabelHotel)
+                            .addComponent(jLabelLema)
+                            .addComponent(jLabelDireccion))
+                        .addGap(0, 234, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelHotel)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelLema)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelDireccion)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelNombre)
                 .addGap(18, 18, 18)
                 .addComponent(jLabelCiudad)
@@ -152,7 +181,7 @@ public class Voucher extends javax.swing.JInternalFrame {
                 .addComponent(jLabelPerEx)
                 .addGap(18, 18, 18)
                 .addComponent(jLabelReg)
-                .addGap(68, 68, 68))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -163,13 +192,17 @@ public class Voucher extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+        this.jLabelImagen.setIcon(new ImageIcon("src/imagenes/gowa.jpg"));
+        this.jLabelHotel.setText("GOWA Hotel");
+        this.jLabelLema.setText("Sueños pesados, costos ligeros");
+        this.jLabelDireccion.setText("Blvd. Kukulcan Km 7.5, Punta Cancun, 77500 Cancún, Q.R.");
         this.jLabelNombre.setText("Nombre del huésped: " + this.nombre);
         this.jLabelCiudad.setText("Ciudad de origen: " + this.ciudad);
         this.jLabelFechaIn.setText("Fecha de ingreso: " + this.fechaIn);
@@ -191,8 +224,12 @@ public class Voucher extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabelCiudad;
+    private javax.swing.JLabel jLabelDireccion;
     private javax.swing.JLabel jLabelFechaIn;
     private javax.swing.JLabel jLabelFechaSa;
+    private javax.swing.JLabel jLabelHotel;
+    private javax.swing.JLabel jLabelImagen;
+    private javax.swing.JLabel jLabelLema;
     private javax.swing.JLabel jLabelLimHuespedes;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelNumHabitacion;

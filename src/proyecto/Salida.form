@@ -213,7 +213,7 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCheckBoxServNi&#xf1;era">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Servicio de ni&#xf1;era"/>
+            <Property name="text" type="java.lang.String" value="Servicio de guarderia/ni&#xf1;era"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCheckBoxServBuffet">

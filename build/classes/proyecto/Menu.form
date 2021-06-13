@@ -66,6 +66,64 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultas"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemFotos">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fotos del hotel"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemFotosActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemIngresos">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ingresos del hotel"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemIngresosActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemOcupacionHab">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ocupacion por habitacion"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemHabitaciones">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Habitaciones del hotel "/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemOcupacionHotel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ocupacion del hotel"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemCostoHabitacion">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Costo de las habitaciones"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemUbicacionHuesped">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ubiacion de un huesped"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemEstadoHabitacion">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Estado de una habitacion"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemHabitacionesPiso">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Habitaciones por piso"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemListaHuespedes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lista de huespedes"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenuSalir">
           <Properties>
