@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Proyecto;
+package proyecto;
 
 import controlMySql.MySqlConn;
 import java.awt.Color;
@@ -611,118 +611,131 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     private void jButtonHabitacion100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion100ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion100.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion100ActionPerformed
 
     private void jButtonHabitacion102ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion102ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion102.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion102ActionPerformed
 
     private void jButtonHabitacion103ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion103ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion103.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion103ActionPerformed
 
     private void jButtonHabitacion105ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion105ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion105.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion105ActionPerformed
 
     private void jButtonHabitacion109ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion109ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion109.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion109ActionPerformed
 
     private void jButtonHabitacion111ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion111ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion111.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion111ActionPerformed
 
     private void jButtonHabitacion112ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion112ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion112.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion112ActionPerformed
 
     private void jButtonHabitacion114ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion114ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion114.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion114ActionPerformed
 
     private void jButtonHabitacion115ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion115ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion115.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion115ActionPerformed
 
     private void jButtonHabitacion121ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion121ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion121.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion121ActionPerformed
 
     private void jButtonHabitacion122ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion122ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion122.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion122ActionPerformed
 
     private void jButtonHabitacion123ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion123ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion123.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion123ActionPerformed
 
     private void jButtonHabitacion129ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHabitacion129ActionPerformed
         // TODO add your handling code here:
         habitacion = this.jButtonHabitacion129.getText().trim();
-        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1);
+        RegistrarDatos registrar = new RegistrarDatos(habitacion, "Sencilla",1,800);
         Menu.jDesktopPaneEscritorio.add(registrar);
         registrar.toFront();
         registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonHabitacion129ActionPerformed
 
 

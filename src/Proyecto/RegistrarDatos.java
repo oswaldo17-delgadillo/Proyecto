@@ -3,11 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Proyecto;
+package proyecto;
 
 import controlMySql.MySqlConn;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
 
 /**
  *
@@ -18,6 +21,7 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
     private String habitacion;
     private String tipo;
     private int ocupantes;
+    private int costoHab;
     
     /**
      * Creates new form RegistrarDatos
@@ -26,11 +30,12 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
         initComponents();
     }
     
-    public RegistrarDatos(String hab, String tip, int oc) {
+    public RegistrarDatos(String hab, String tip, int oc, int ch) {
         this.conn = new MySqlConn();
         this.habitacion = hab;
         this.tipo = tip;
         this.ocupantes = oc;
+        this.costoHab = ch;
         initComponents();
     }
 
@@ -64,6 +69,10 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jTextFieldCiudadOrigen = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        jSpinnerHuespedes = new javax.swing.JSpinner();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jTextFieldCosto = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -103,7 +112,7 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Personas extra:");
 
-        jSpinnerDiasHospedaje.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
+        jSpinnerDiasHospedaje.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         jTextFieldNumHabitacion.setEditable(false);
 
@@ -143,6 +152,14 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
 
         jLabel9.setText("Ciudad de origen:");
 
+        jSpinnerHuespedes.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jLabel10.setText("Huespedes:");
+
+        jLabel11.setText("Costo:");
+
+        jTextFieldCosto.setEditable(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -176,15 +193,23 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel5)
-                                    .addComponent(jLabel9))
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldTipo)
-                                    .addComponent(jTextFieldNumHabitacion, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                    .addComponent(jDateChooserFechaEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                    .addComponent(jSpinnerDiasHospedaje, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldCiudadOrigen))))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSpinnerHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextFieldNumHabitacion, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                                        .addComponent(jDateChooserFechaEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                                        .addComponent(jSpinnerDiasHospedaje, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextFieldCiudadOrigen)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jTextFieldTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jLabel11)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jTextFieldCosto))))))))
                 .addContainerGap(90, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -193,30 +218,37 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldNumHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldCiudadOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateChooserFechaEntrada, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldNumHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel11)
+                            .addComponent(jTextFieldCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldCiudadOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addGap(18, 18, 18)
+                        .addComponent(jDateChooserFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSpinnerDiasHospedaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSpinnerHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButtonSi)
                     .addComponent(jRadioButtonNo)
@@ -245,9 +277,13 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         // TODO add your handling code here:
+        SpinnerModel sm = new SpinnerNumberModel(ocupantes, 1, ocupantes, 1);
         this.jTextFieldNumHabitacion.setText(habitacion);
         this.jTextFieldTipo.setText(tipo);
         this.jSpinnerPersonasEx.setEnabled(false);
+        this.jSpinnerHuespedes.setValue(ocupantes);
+        this.jSpinnerHuespedes.setModel(sm);
+        this.jTextFieldCosto.setText(costoHab+"");
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -255,7 +291,7 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
         String fechaent, ciudad, fechasal;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String nombre;
-        int dias;
+        int dias, ext = 0, ocup;
         Calendar aux;
         
         nombre = this.jTextFieldNombre.getText().trim();
@@ -271,29 +307,39 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
         fechasal = sdf.format(this.jDateChooserFechaEntrada.getDate());
         
         this.jDateChooserFechaEntrada.setCalendar(null);
-        
+        ocup = Integer.parseInt(this.jSpinnerHuespedes.getValue().toString());
         if(this.jRadioButtonSi.isSelected() == true){
-            this.ocupantes += Integer.parseInt(this.jSpinnerPersonasEx.getValue().toString());
+            ext = Integer.parseInt(this.jSpinnerPersonasEx.getValue().toString());
         }
         
-        String parte1 = "insert into registros (habitacion,tipoHabitacion,numOcupantes,Nombre,ciudadOrigen,fechaEntrada,fechaSalida) VALUES (";
-        String parte2 = "'" + habitacion + "','" + tipo + "','" + ocupantes + "','" + nombre + "','" + ciudad + "','" + fechaent + "','" + fechasal + "')"; 
+        String parte1 = "insert into registros (habitacion,tipoHabitacion,costo,numOcupantes,ocupantesEx,Nombre,ciudadOrigen,fechaEntrada,fechaSalida) VALUES (";
+        String parte2 = "'" + habitacion + "','" + tipo + "','" + costoHab + "','" +ocup + "','" + ext + "','" + nombre + "','" + ciudad + "','" + fechaent + "','" + fechasal + "')"; 
         String query = parte1 + parte2;
         
         this.conn.Update(query);
-        Recibo re=new Recibo(); 
-        re.setVisible(true);
+        
+        query = "UPDATE habitaciones SET estado = 'Ocupada'  WHERE habitacion = " + this.jTextFieldNumHabitacion.getText();
+        this.conn.Update(query);
+        
+        Voucher comprobante;
+        comprobante = new Voucher(nombre,ciudad, fechaent,fechasal,this.tipo,this.habitacion, this.ocupantes, (ocup+ext), ext);
+        Menu.jDesktopPaneEscritorio.add(comprobante);
+        comprobante.toFront();
+        comprobante.setVisible(true);
+        dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButtonNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNoActionPerformed
         // TODO add your handling code here:
         this.jSpinnerPersonasEx.setEnabled(false);
+        this.jSpinnerPersonasEx.setValue(0);
     }//GEN-LAST:event_jRadioButtonNoActionPerformed
 
     private void jRadioButtonSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonSiActionPerformed
         // TODO add your handling code here:
         this.jSpinnerPersonasEx.setEnabled(true);
+        JOptionPane.showMessageDialog(this, "Se cobrara un cargo extra de $200 por persona");
     }//GEN-LAST:event_jRadioButtonSiActionPerformed
 
 
@@ -302,6 +348,8 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooserFechaEntrada;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -314,8 +362,10 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton jRadioButtonNo;
     private javax.swing.JRadioButton jRadioButtonSi;
     private javax.swing.JSpinner jSpinnerDiasHospedaje;
+    private javax.swing.JSpinner jSpinnerHuespedes;
     private javax.swing.JSpinner jSpinnerPersonasEx;
     private javax.swing.JTextField jTextFieldCiudadOrigen;
+    private javax.swing.JTextField jTextFieldCosto;
     private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldNumHabitacion;
     private javax.swing.JTextField jTextFieldTipo;

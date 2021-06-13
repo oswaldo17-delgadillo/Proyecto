@@ -3,61 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Proyecto;
-
-import java.applet.AudioClip;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
+package proyecto;
 
 /**
  *
  * @author osba_
  */
-public class PresentacionHotel extends javax.swing.JFrame {
- private int cont=0;
+public class presentacionHotel extends javax.swing.JFrame {
 
     /**
-     * Creates new form PresentacionHotel
+     * Creates new form presentacionHotel
      */
-    public PresentacionHotel() {
+    public presentacionHotel() {
         initComponents();
-        this.setLocationRelativeTo(null);//Centro
-        this.jLabelNombreHotel.setVisible(false);
-        this.jPanel1.setVisible(false);
-        this.jPanel2.setVisible(false);
-        this.jPanel3.setVisible(false);
-        this.jLabelIniciarSesion.setVisible(false);
-        this.jLabelMenu.setVisible(false);
-        this.jLabelMusica.setVisible(false);
-        this.jLabelSlogan.setVisible(false);
-        this.jLabelStop.setVisible(false);
-        this.jLabelalberca.setVisible(false);
-        this.jLabelgym.setVisible(false);
-        this.jLabelrestaurant.setVisible(false);
-        this.jLabelhabitaciones.setVisible(false);
-        AudioClip musica;
-        musica=java.applet.Applet.newAudioClip(getClass().getResource("/Proyecto/iph.wav"));
-        musica.play(); 
-        try {
-        Thread.sleep(2000);
-        } catch (InterruptedException ex) {
-        Logger.getLogger(Laminapantalla.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.jPanel1.setVisible(true);
-        this.jPanel2.setVisible(true);
-        this.jPanel3.setVisible(true);
-        
-        this.jLabelNombreHotel.setVisible(true);
-        this.jLabelIniciarSesion.setVisible(true);
-        this.jLabelMenu.setVisible(true);
-        this.jLabelMusica.setVisible(true);
-        this.jLabelSlogan.setVisible(true);
-        this.jLabelStop.setVisible(true);
-        
     }
 
     /**
@@ -70,44 +28,50 @@ public class PresentacionHotel extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabelIniciarSesion = new javax.swing.JLabel();
-        jLabelMusica = new javax.swing.JLabel();
-        jLabelStop = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabelNombreHotel = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabelSlogan = new javax.swing.JLabel();
-        jLabelMenu = new javax.swing.JLabel();
-        jLabelhabitaciones = new javax.swing.JLabel();
-        jLabelrestaurant = new javax.swing.JLabel();
-        jLabelalberca = new javax.swing.JLabel();
-        jLabelgym = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButtonIngresar = new javax.swing.JButton();
+        jButtonRegistrarse = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
-        setUndecorated(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
 
-        jLabelIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_customer_32px_1.png"))); // NOI18N
-        jLabelIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelIniciarSesionMouseClicked(evt);
+        jLabel1.setFont(new java.awt.Font("Kristen ITC", 3, 24)); // NOI18N
+        jLabel1.setText("Hotel grand premier");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Lema");
+
+        jLabel3.setText("logotipo");
+
+        jLabel4.setText("imagen1");
+
+        jLabel5.setText("imagen2");
+
+        jLabel6.setText("imagen3");
+
+        jLabel7.setText("imagen4");
+
+        jLabel8.setText("imagen5");
+
+        jButtonIngresar.setText("Ingresar");
+        jButtonIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIngresarActionPerformed(evt);
             }
         });
 
-        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Musical_Notes_32px.png"))); // NOI18N
-        jLabelMusica.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelMusicaMouseClicked(evt);
-            }
-        });
-
-        jLabelStop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Multiply_32px.png"))); // NOI18N
-        jLabelStop.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelStopMouseClicked(evt);
+        jButtonRegistrarse.setText("Registrarse");
+        jButtonRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistrarseActionPerformed(evt);
             }
         });
 
@@ -118,189 +82,84 @@ public class PresentacionHotel extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelStop, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(136, 136, 136)
+                        .addComponent(jLabel5)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(148, 148, 148)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addGap(171, 171, 171)
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                                        .addComponent(jLabel8))
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonIngresar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButtonRegistrarse, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addContainerGap())
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButtonIngresar, jButtonRegistrarse});
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 310, Short.MAX_VALUE)
-                .addComponent(jLabelMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelStop, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 80, 80, 470));
-
-        jPanel2.setBackground(new java.awt.Color(255, 102, 0));
-
-        jLabelNombreHotel.setFont(new java.awt.Font("Kristen ITC", 3, 48)); // NOI18N
-        jLabelNombreHotel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelNombreHotel.setText("GOWA HOTEL");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(140, Short.MAX_VALUE)
-                .addComponent(jLabelNombreHotel, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(128, 128, 128))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelNombreHotel, javax.swing.GroupLayout.PREFERRED_SIZE, 59, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 740, 80));
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabelSlogan.setFont(new java.awt.Font("Kristen ITC", 2, 24)); // NOI18N
-        jLabelSlogan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelSlogan.setText("Sueños pesados, costos ligeros");
-
-        jLabelMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_Menu_32px_1.png"))); // NOI18N
-        jLabelMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelMenuMouseClicked(evt);
-            }
-        });
-
-        jLabelhabitaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelhabitaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/hab.png"))); // NOI18N
-        jLabelhabitaciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelhabitacionesMouseClicked(evt);
-            }
-        });
-
-        jLabelrestaurant.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelrestaurant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/restaurante1.jpg"))); // NOI18N
-        jLabelrestaurant.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelrestaurantMouseClicked(evt);
-            }
-        });
-
-        jLabelalberca.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelalberca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/piscina1.jpg"))); // NOI18N
-        jLabelalberca.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelalbercaMouseClicked(evt);
-            }
-        });
-
-        jLabelgym.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelgym.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gym1.jpg"))); // NOI18N
-        jLabelgym.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelgymMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addComponent(jLabelSlogan, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabelrestaurant, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jLabelalberca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jLabelgym, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelhabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(0, 543, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelSlogan)
-                    .addComponent(jLabelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButtonIngresar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelgym, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelalberca)
+                .addComponent(jButtonRegistrarse)
+                .addGap(66, 66, 66)
+                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jLabelrestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelhabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(109, 109, 109)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 660, 470));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabelMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMenuMouseClicked
-        if(cont==0){
-        this.jLabelalberca.setVisible(true);
-        this.jLabelgym.setVisible(true);
-        this.jLabelrestaurant.setVisible(true);
-        this.jLabelhabitaciones.setVisible(true);
-        cont++;
-        }else{
-        this.jLabelalberca.setVisible(false);
-        this.jLabelgym.setVisible(false);
-        this.jLabelrestaurant.setVisible(false);
-        this.jLabelhabitaciones.setVisible(false);
-        cont=0;
-        }
-    }//GEN-LAST:event_jLabelMenuMouseClicked
+    private void jButtonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseActionPerformed
+        Registro reg=new Registro();
+        reg.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButtonRegistrarseActionPerformed
 
-    private void jLabelMusicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMusicaMouseClicked
-        AudioClip musica;
-        musica=java.applet.Applet.newAudioClip(getClass().getResource("/Proyecto/vamos.wav"));
-        musica.play(); 
-    }//GEN-LAST:event_jLabelMusicaMouseClicked
-
-    private void jLabelStopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelStopMouseClicked
-        AudioClip musica;
-        musica=java.applet.Applet.newAudioClip(getClass().getResource("/Proyecto/vamos.wav"));
-        musica.stop(); 
-    }//GEN-LAST:event_jLabelStopMouseClicked
-
-    private void jLabelIniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelIniciarSesionMouseClicked
+    private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         Login log=new Login();
         log.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jLabelIniciarSesionMouseClicked
-
-    private void jLabelgymMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelgymMouseClicked
-        gym c= new gym();
-        c.setVisible(true);
-    }//GEN-LAST:event_jLabelgymMouseClicked
-
-    private void jLabelalbercaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelalbercaMouseClicked
-        Alberca al=new Alberca();
-        al.setVisible(true);
-    }//GEN-LAST:event_jLabelalbercaMouseClicked
-
-    private void jLabelrestaurantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelrestaurantMouseClicked
-        Restaurant res=new Restaurant();
-        res.setVisible(true);
-    }//GEN-LAST:event_jLabelrestaurantMouseClicked
-
-    private void jLabelhabitacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelhabitacionesMouseClicked
-        Habitacion hab=new Habitacion();
-        hab.setVisible(true);
-    }//GEN-LAST:event_jLabelhabitacionesMouseClicked
+    }//GEN-LAST:event_jButtonIngresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -319,38 +178,35 @@ public class PresentacionHotel extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PresentacionHotel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(presentacionHotel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PresentacionHotel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(presentacionHotel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PresentacionHotel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(presentacionHotel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PresentacionHotel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(presentacionHotel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PresentacionHotel().setVisible(true);
+                new presentacionHotel().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabelIniciarSesion;
-    private javax.swing.JLabel jLabelMenu;
-    private javax.swing.JLabel jLabelMusica;
-    private javax.swing.JLabel jLabelNombreHotel;
-    private javax.swing.JLabel jLabelSlogan;
-    private javax.swing.JLabel jLabelStop;
-    private javax.swing.JLabel jLabelalberca;
-    private javax.swing.JLabel jLabelgym;
-    private javax.swing.JLabel jLabelhabitaciones;
-    private javax.swing.JLabel jLabelrestaurant;
+    private javax.swing.JButton jButtonIngresar;
+    private javax.swing.JButton jButtonRegistrarse;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
-    
 }

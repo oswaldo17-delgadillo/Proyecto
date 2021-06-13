@@ -1,10 +1,5 @@
 
-package Proyecto;
-
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
+package proyecto;
 
 
 public class Menu extends javax.swing.JFrame {
@@ -34,6 +29,16 @@ public class Menu extends javax.swing.JFrame {
         jMenuItemTriple = new javax.swing.JMenuItem();
         jMenuBajas = new javax.swing.JMenu();
         jMenuConsultas = new javax.swing.JMenu();
+        jMenuItemFotos = new javax.swing.JMenuItem();
+        jMenuItemIngresos = new javax.swing.JMenuItem();
+        jMenuItemOcupacionHab = new javax.swing.JMenuItem();
+        jMenuItemHabitaciones = new javax.swing.JMenuItem();
+        jMenuItemOcupacionHotel = new javax.swing.JMenuItem();
+        jMenuItemCostoHabitacion = new javax.swing.JMenuItem();
+        jMenuItemUbicacionHuesped = new javax.swing.JMenuItem();
+        jMenuItemEstadoHabitacion = new javax.swing.JMenuItem();
+        jMenuItemHabitacionesPiso = new javax.swing.JMenuItem();
+        jMenuItemListaHuespedes = new javax.swing.JMenuItem();
         jMenuSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,27 +95,58 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.add(jMenuAltas);
 
         jMenuBajas.setText("Salida");
-        jMenuBajas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuBajasActionPerformed(evt);
+        jMenuBajas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuBajasMouseClicked(evt);
             }
         });
         jMenuBar1.add(jMenuBajas);
 
         jMenuConsultas.setText("Consultas");
-        jMenuConsultas.addActionListener(new java.awt.event.ActionListener() {
+
+        jMenuItemFotos.setText("Fotos del hotel");
+        jMenuItemFotos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuConsultasActionPerformed(evt);
+                jMenuItemFotosActionPerformed(evt);
             }
         });
+        jMenuConsultas.add(jMenuItemFotos);
+
+        jMenuItemIngresos.setText("Ingresos del hotel");
+        jMenuItemIngresos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemIngresosActionPerformed(evt);
+            }
+        });
+        jMenuConsultas.add(jMenuItemIngresos);
+
+        jMenuItemOcupacionHab.setText("Ocupacion por habitacion");
+        jMenuConsultas.add(jMenuItemOcupacionHab);
+
+        jMenuItemHabitaciones.setText("Habitaciones del hotel ");
+        jMenuConsultas.add(jMenuItemHabitaciones);
+
+        jMenuItemOcupacionHotel.setText("Ocupacion del hotel");
+        jMenuConsultas.add(jMenuItemOcupacionHotel);
+
+        jMenuItemCostoHabitacion.setText("Costo de las habitaciones");
+        jMenuConsultas.add(jMenuItemCostoHabitacion);
+
+        jMenuItemUbicacionHuesped.setText("Ubiacion de un huesped");
+        jMenuConsultas.add(jMenuItemUbicacionHuesped);
+
+        jMenuItemEstadoHabitacion.setText("Estado de una habitacion");
+        jMenuConsultas.add(jMenuItemEstadoHabitacion);
+
+        jMenuItemHabitacionesPiso.setText("Habitaciones por piso");
+        jMenuConsultas.add(jMenuItemHabitacionesPiso);
+
+        jMenuItemListaHuespedes.setText("Lista de huespedes");
+        jMenuConsultas.add(jMenuItemListaHuespedes);
+
         jMenuBar1.add(jMenuConsultas);
 
         jMenuSalir.setText("Salir");
-        jMenuSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuSalirActionPerformed(evt);
-            }
-        });
         jMenuBar1.add(jMenuSalir);
 
         setJMenuBar(jMenuBar1);
@@ -155,17 +191,26 @@ public class Menu extends javax.swing.JFrame {
         altas.show();
     }//GEN-LAST:event_jMenuItemDobleActionPerformed
 
-    private void jMenuBajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuBajasActionPerformed
-        
-    }//GEN-LAST:event_jMenuBajasActionPerformed
+    private void jMenuBajasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBajasMouseClicked
+        // TODO add your handling code here:
+        Salida bajas = new Salida();
+        this.jDesktopPaneEscritorio.add(bajas);
+        bajas.show();
+    }//GEN-LAST:event_jMenuBajasMouseClicked
 
-    private void jMenuConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuConsultasActionPerformed
-        
-    }//GEN-LAST:event_jMenuConsultasActionPerformed
+    private void jMenuItemFotosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFotosActionPerformed
+        // TODO add your handling code here:
+        Consulta1 fotos= new Consulta1();
+        this.jDesktopPaneEscritorio.add(fotos);
+        fotos.show();
+    }//GEN-LAST:event_jMenuItemFotosActionPerformed
 
-    private void jMenuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jMenuSalirActionPerformed
+    private void jMenuItemIngresosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemIngresosActionPerformed
+        // TODO add your handling code here:
+        Consulta2 ingresos= new Consulta2();
+        this.jDesktopPaneEscritorio.add(ingresos);
+        ingresos.show();
+    }//GEN-LAST:event_jMenuItemIngresosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,9 +254,19 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuBajas;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuConsultas;
+    private javax.swing.JMenuItem jMenuItemCostoHabitacion;
     private javax.swing.JMenuItem jMenuItemDoble;
+    private javax.swing.JMenuItem jMenuItemEstadoHabitacion;
+    private javax.swing.JMenuItem jMenuItemFotos;
+    private javax.swing.JMenuItem jMenuItemHabitaciones;
+    private javax.swing.JMenuItem jMenuItemHabitacionesPiso;
+    private javax.swing.JMenuItem jMenuItemIngresos;
+    private javax.swing.JMenuItem jMenuItemListaHuespedes;
+    private javax.swing.JMenuItem jMenuItemOcupacionHab;
+    private javax.swing.JMenuItem jMenuItemOcupacionHotel;
     private javax.swing.JMenuItem jMenuItemSencilla;
     private javax.swing.JMenuItem jMenuItemTriple;
+    private javax.swing.JMenuItem jMenuItemUbicacionHuesped;
     private javax.swing.JMenu jMenuSalir;
     // End of variables declaration//GEN-END:variables
 }
