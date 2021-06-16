@@ -1,0 +1,4 @@
+Para gantarizar el correcto uso de este programa es necesario que:
+1.- Importar la base de datos que se encuentra en el proyecto con el nombre de "hotel".
+2.- El programa se corre desde la interfaz con nombre "Pantalla Inicial".
+3.- Si ocurre un problema con las librerias se ha dejado en el proyecto todos los .JAR necesarios
