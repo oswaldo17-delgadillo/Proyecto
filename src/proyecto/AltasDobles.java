@@ -539,8 +539,20 @@ public class AltasDobles extends javax.swing.JInternalFrame {
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         // TODO add your handling code here:
+        String query = "Select habitacion from registros";
+        int i = 0;
+        this.conn.Consult(query);
+        try{
+            this.conn.rs.last();
+            i=this.conn.rs.getRow();
+        }catch(SQLException ex){
+            
+        }
+        if(i == 30)
+            JOptionPane.showMessageDialog(this, "El hotel se encuetran lleno!");
+        
         String aux;
-        String query = "Select habitacion from registros where tipoHabitacion = 'Doble'";
+        query = "Select habitacion from registros where tipoHabitacion = 'Doble'";
         
         this.conn.Consult(query);
         try{

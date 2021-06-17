@@ -6,6 +6,7 @@
 package proyecto;
 
 import controlMySql.MySqlConn;
+import java.applet.AudioClip;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +17,8 @@ import javax.swing.JOptionPane;
 public class Consulta1 extends javax.swing.JInternalFrame {
     
     MySqlConn conn;
-    
+    AudioClip sonido;
+    int ban =1;
     
     public Consulta1() {
         conn = new MySqlConn();
@@ -35,7 +37,10 @@ public class Consulta1 extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jButtonSig = new javax.swing.JButton();
         jLabelImagen = new javax.swing.JLabel();
+        jButtonPlay = new javax.swing.JButton();
+        jButtonPause = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
@@ -43,11 +48,11 @@ public class Consulta1 extends javax.swing.JInternalFrame {
         setTitle("Areas del hotel");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-                formInternalFrameActivated(evt);
             }
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameClosing(evt);
             }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -56,6 +61,7 @@ public class Consulta1 extends javax.swing.JInternalFrame {
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
             }
         });
 
@@ -72,18 +78,36 @@ public class Consulta1 extends javax.swing.JInternalFrame {
 
         jLabelImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        jButtonPlay.setText("Play");
+        jButtonPlay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPlayActionPerformed(evt);
+            }
+        });
+
+        jButtonPause.setText("Pausa");
+        jButtonPause.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPauseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelImagen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtonPlay)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonPause)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonSig)
-                        .addGap(0, 523, Short.MAX_VALUE)))
+                        .addGap(58, 58, 58)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -94,14 +118,54 @@ public class Consulta1 extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonSig)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSig)
+                    .addComponent(jButtonPlay)
+                    .addComponent(jButtonPause))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+    private void jButtonSigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSigActionPerformed
+        // TODO add your handling code here:
+        String area = "";
+        
+        try {
+            if(ban == 1){
+                this.conn.rs.next();
+            }
+            ban = 1;
+            area =  this.conn.rs.getString(1);
+            this.jLabelImagen.setIcon(new ImageIcon(this.conn.rs.getString(2)));
+            this.jLabel1.setText(area);
+            if(this.conn.rs.getString(1).equals("Spa")){
+                ban = 0;
+                this.conn.rs.first();
+            }
+        } catch (SQLException ex) {
+        }     
+    }//GEN-LAST:event_jButtonSigActionPerformed
+
+    private void jButtonPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlayActionPerformed
+        // TODO add your handling code here:
+        sonido.stop();
+        
+        sonido.loop();
+    }//GEN-LAST:event_jButtonPlayActionPerformed
+
+    private void jButtonPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPauseActionPerformed
+        // TODO add your handling code here:
+        sonido.stop();
+    }//GEN-LAST:event_jButtonPauseActionPerformed
+
+    private void formInternalFrameClosing(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosing
+        // TODO add your handling code here:
+        sonido.stop();
+    }//GEN-LAST:event_formInternalFrameClosing
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         // TODO add your handling code here:
         String query = "SELECT * FROM `areas`";
         String area;
@@ -110,30 +174,19 @@ public class Consulta1 extends javax.swing.JInternalFrame {
             area =  this.conn.rs.getString(1);
             this.jLabelImagen.setIcon(new ImageIcon(this.conn.rs.getString(2)));
             this.jLabel1.setText(area);
-        } catch (SQLException ex) {
-        }
-        
-    }//GEN-LAST:event_formInternalFrameActivated
-
-    private void jButtonSigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSigActionPerformed
-        // TODO add your handling code here:
-        String area = "";
-        try {
             this.conn.rs.next();
-            area =  this.conn.rs.getString(1);
-            this.jLabelImagen.setIcon(new ImageIcon(this.conn.rs.getString(2)));
-            this.jLabel1.setText(area);
-            if(this.conn.rs.getString(1).equals("Spa")){
-                JOptionPane.showMessageDialog(this, "Fin de las imagenes!");
-                this.jButtonSig.setEnabled(false);
-            }
         } catch (SQLException ex) {
-        }     
-    }//GEN-LAST:event_jButtonSigActionPerformed
+            JOptionPane.showMessageDialog(this, "No se encontra ninguna imagen!");
+        }
+        sonido = java.applet.Applet.newAudioClip((getClass().getResource("/tonos/vamos.wav")));
+        sonido.loop();
+    }//GEN-LAST:event_formInternalFrameOpened
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonPause;
+    private javax.swing.JButton jButtonPlay;
     private javax.swing.JButton jButtonSig;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelImagen;

@@ -8,6 +8,7 @@ package proyecto;
 import controlMySql.MySqlConn;
 import java.awt.Color;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 
 public class AltasSencillas extends javax.swing.JInternalFrame {
@@ -542,8 +543,20 @@ public class AltasSencillas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jLabelHabitacion101MouseClicked
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+        String query = "Select habitacion from registros";
+        int i = 0;
+        this.conn.Consult(query);
+        try{
+            this.conn.rs.last();
+            i=this.conn.rs.getRow();
+        }catch(SQLException ex){
+            
+        }
+        if(i == 30)
+            JOptionPane.showMessageDialog(this, "El hotel se encuetran lleno!");
+        
         String aux;
-        String query = "Select habitacion from registros where tipoHabitacion = 'Sencilla'";
+        query = "Select habitacion from registros where tipoHabitacion = 'Sencilla'";
         
         this.conn.Consult(query);
         try{
