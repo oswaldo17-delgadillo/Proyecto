@@ -87,6 +87,8 @@ public class Voucher extends javax.swing.JInternalFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabelNombre.setText("jLabel1");
 
         jLabelCiudad.setText("jLabel1");

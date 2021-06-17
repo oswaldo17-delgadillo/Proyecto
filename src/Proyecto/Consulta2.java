@@ -60,6 +60,7 @@ public class Consulta2 extends javax.swing.JInternalFrame {
             }
         });
 
+        jTextFieldIngresos.setEditable(false);
         jTextFieldIngresos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel1.setText("Ingresos del hotel:");

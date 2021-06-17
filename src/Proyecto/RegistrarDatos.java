@@ -8,6 +8,7 @@ package proyecto;
 import controlMySql.MySqlConn;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
@@ -73,6 +74,8 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jTextFieldCosto = new javax.swing.JTextField();
+        jTextFieldApellido = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -112,7 +115,7 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Personas extra:");
 
-        jSpinnerDiasHospedaje.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jSpinnerDiasHospedaje.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 
         jTextFieldNumHabitacion.setEditable(false);
 
@@ -160,6 +163,8 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
 
         jTextFieldCosto.setEditable(false);
 
+        jLabel12.setText("Apellido:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -178,38 +183,42 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel7))
                                 .addGap(23, 23, 23)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 129, Short.MAX_VALUE)
+                                        .addComponent(jButton1))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jRadioButtonSi)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jRadioButtonNo))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jSpinnerPersonasEx, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-                                        .addComponent(jButton1))))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jRadioButtonSi)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jRadioButtonNo))
+                                            .addComponent(jSpinnerPersonasEx, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
                                     .addComponent(jLabel9)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel5)
                                     .addComponent(jLabel10))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSpinnerHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextFieldNumHabitacion, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                        .addComponent(jDateChooserFechaEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                        .addComponent(jSpinnerDiasHospedaje, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextFieldCiudadOrigen)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jTextFieldTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jLabel11)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jTextFieldCosto))))))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldNumHabitacion, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                                    .addComponent(jDateChooserFechaEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldCiudadOrigen)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jTextFieldTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel11)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldCosto))
+                                    .addComponent(jTextFieldApellido)
+                                    .addComponent(jSpinnerDiasHospedaje, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jSpinnerHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(90, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -235,6 +244,10 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldCiudadOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))
                         .addGap(18, 18, 18)
@@ -248,17 +261,18 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSpinnerHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButtonSi)
                     .addComponent(jRadioButtonNo)
                     .addComponent(jLabel6))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSpinnerPersonasEx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jButton1))
-                .addGap(53, 53, 53))
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -278,56 +292,60 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         // TODO add your handling code here:
         SpinnerModel sm = new SpinnerNumberModel(ocupantes, 1, ocupantes, 1);
+        Date diain = new Date();
         this.jTextFieldNumHabitacion.setText(habitacion);
         this.jTextFieldTipo.setText(tipo);
         this.jSpinnerPersonasEx.setEnabled(false);
         this.jSpinnerHuespedes.setValue(ocupantes);
         this.jSpinnerHuespedes.setModel(sm);
         this.jTextFieldCosto.setText(costoHab+"");
+        this.jDateChooserFechaEntrada.setDate(diain);
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String fechaent, ciudad, fechasal;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        String nombre;
+        String nombre, apellido;
         int dias, ext = 0, ocup;
         Calendar aux;
-        
-        nombre = this.jTextFieldNombre.getText().trim();
-        ciudad = this.jTextFieldCiudadOrigen.getText().trim();
-        dias = Integer.parseInt(this.jSpinnerDiasHospedaje.getValue().toString());
-        fechaent = sdf.format(this.jDateChooserFechaEntrada.getDate());
-        aux = this.jDateChooserFechaEntrada.getCalendar();
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(aux.getTime()); 
-        calendar.add(Calendar.DAY_OF_YEAR, dias);
-        this.jDateChooserFechaEntrada.setCalendar(calendar);
-        
-        fechasal = sdf.format(this.jDateChooserFechaEntrada.getDate());
-        
-        this.jDateChooserFechaEntrada.setCalendar(null);
-        ocup = Integer.parseInt(this.jSpinnerHuespedes.getValue().toString());
-        if(this.jRadioButtonSi.isSelected() == true){
-            ext = Integer.parseInt(this.jSpinnerPersonasEx.getValue().toString());
-        }
-        
-        String parte1 = "insert into registros (habitacion,tipoHabitacion,costo,numOcupantes,ocupantesEx,Nombre,ciudadOrigen,fechaEntrada,fechaSalida) VALUES (";
-        String parte2 = "'" + habitacion + "','" + tipo + "','" + costoHab + "','" +ocup + "','" + ext + "','" + nombre + "','" + ciudad + "','" + fechaent + "','" + fechasal + "')"; 
-        String query = parte1 + parte2;
-        
-        this.conn.Update(query);
-        
-        query = "UPDATE habitaciones SET estado = 'Ocupada'  WHERE habitacion = " + this.jTextFieldNumHabitacion.getText();
-        this.conn.Update(query);
-        
-        Voucher comprobante;
-        comprobante = new Voucher(nombre,ciudad, fechaent,fechasal,this.tipo,this.habitacion, this.ocupantes, (ocup+ext), ext);
-        Menu.jDesktopPaneEscritorio.add(comprobante);
-        comprobante.toFront();
-        comprobante.setVisible(true);
-        dispose();
-        
+        if(!this.jTextFieldApellido.getText().equals("") && !this.jTextFieldNombre.getText().equals("") && !this.jTextFieldCiudadOrigen.getText().equals("")){
+            apellido = this.jTextFieldApellido.getText().trim();
+            nombre = this.jTextFieldNombre.getText().trim();
+            ciudad = this.jTextFieldCiudadOrigen.getText().trim();
+            dias = Integer.parseInt(this.jSpinnerDiasHospedaje.getValue().toString());
+            fechaent = sdf.format(this.jDateChooserFechaEntrada.getDate());
+            aux = this.jDateChooserFechaEntrada.getCalendar();
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(aux.getTime()); 
+            calendar.add(Calendar.DAY_OF_YEAR, dias);
+            this.jDateChooserFechaEntrada.setCalendar(calendar);
+
+            fechasal = sdf.format(this.jDateChooserFechaEntrada.getDate());
+
+            this.jDateChooserFechaEntrada.setCalendar(null);
+            ocup = Integer.parseInt(this.jSpinnerHuespedes.getValue().toString());
+            if(this.jRadioButtonSi.isSelected() == true){
+                ext = Integer.parseInt(this.jSpinnerPersonasEx.getValue().toString());
+            }
+
+            String parte1 = "insert into registros (habitacion,tipoHabitacion,costo,numOcupantes,ocupantesEx,Nombre,ciudadOrigen,fechaEntrada,fechaSalida) VALUES (";
+            String parte2 = "'" + habitacion + "','" + tipo + "','" + costoHab + "','" +ocup + "','" + ext + "','" + (nombre + " " + apellido) + "','" + ciudad + "','" + fechaent + "','" + fechasal + "')"; 
+            String query = parte1 + parte2;
+
+            this.conn.Update(query);
+
+            query = "UPDATE habitaciones SET estado = 'Ocupada'  WHERE habitacion = " + this.jTextFieldNumHabitacion.getText();
+            this.conn.Update(query);
+
+            Voucher comprobante;
+            comprobante = new Voucher(nombre + " " + apellido,ciudad, fechaent,fechasal,this.tipo,this.habitacion, this.ocupantes, (ocup+ext), ext);
+            Menu.jDesktopPaneEscritorio.add(comprobante);
+            comprobante.toFront();
+            comprobante.setVisible(true);
+            dispose();
+        }else
+            JOptionPane.showMessageDialog(this, "Hay un campo por llenar!");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButtonNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNoActionPerformed
@@ -350,6 +368,7 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -364,6 +383,7 @@ public class RegistrarDatos extends javax.swing.JInternalFrame {
     private javax.swing.JSpinner jSpinnerDiasHospedaje;
     private javax.swing.JSpinner jSpinnerHuespedes;
     private javax.swing.JSpinner jSpinnerPersonasEx;
+    private javax.swing.JTextField jTextFieldApellido;
     private javax.swing.JTextField jTextFieldCiudadOrigen;
     private javax.swing.JTextField jTextFieldCosto;
     private javax.swing.JTextField jTextFieldNombre;

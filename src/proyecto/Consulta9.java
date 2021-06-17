@@ -128,7 +128,7 @@ public class Consulta9 extends javax.swing.JInternalFrame {
             }while(this.conn.rs.next());
             query = "SELECT habitacion FROM habitaciones WHERE piso = " + this.jComboBoxPiso.getSelectedItem() + " AND tipo = 'Triple'";;
             this.conn.Consult(query);
-            this.jTextArea1.append("\nDobles:\n");
+            this.jTextArea1.append("\nTriples:\n");
             do{
                 this.jTextArea1.append(this.conn.rs.getString(1) + ", ");
             }while(this.conn.rs.next());

@@ -68,13 +68,15 @@ public class Salida extends javax.swing.JInternalFrame {
         jButtonCalcular = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldMontoPagar = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButtonSalida = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Salidas");
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jButtonComprobar.setText("Comprobar");
         jButtonComprobar.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +87,7 @@ public class Salida extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Habitacion:");
 
-        jLabel2.setText("Nombre: ");
+        jLabel2.setText("Nombre completo: ");
 
         jTextFieldNombre.setEditable(false);
 
@@ -116,10 +118,12 @@ public class Salida extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Monto a pagar:");
 
-        jButton1.setText("Marcar Salida");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldMontoPagar.setEditable(false);
+
+        jButtonSalida.setText("Marcar Salida");
+        jButtonSalida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonSalidaActionPerformed(evt);
             }
         });
 
@@ -130,6 +134,12 @@ public class Salida extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jButtonCalcular)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonSalida)
+                        .addGap(79, 79, 79))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jCheckBoxServCuarto)
@@ -143,32 +153,25 @@ public class Salida extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldMontoPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel4)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel3))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextFieldHabitacion)
-                                            .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextFieldTipoHab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldMontoPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonComprobar)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jButtonCalcular)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(79, 79, 79))))
+                                        .addComponent(jTextFieldHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButtonComprobar))
+                                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldTipoHab, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(20, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +210,7 @@ public class Salida extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCalcular)
-                    .addComponent(jButton1))
+                    .addComponent(jButtonSalida))
                 .addContainerGap())
         );
 
@@ -227,240 +230,249 @@ public class Salida extends javax.swing.JInternalFrame {
 
     private void jButtonComprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprobarActionPerformed
         // TODO add your handling code here:
-        String query = "Select * from registros where habitacion = '" + this.jTextFieldHabitacion.getText().trim() + "'";
-        
-        this.conn.Consult(query);
-        try{
-            this.jTextFieldNombre.setText(this.conn.rs.getString(6));
-            this.jTextFieldTipoHab.setText(this.conn.rs.getString(2));
-            this.costo = this.conn.rs.getInt(3);
-            this.ciudad = this.conn.rs.getString(7);
-            this.fechaIn= this.conn.rs.getString(8);
-            this.fechaSa = this.conn.rs.getString(9);
-            this.nombre = this.jTextFieldNombre.getText().trim();
-            this.tipoHab = this.jTextFieldTipoHab.getText().trim();
-            this.numHab = this.jTextFieldHabitacion.getText().trim();
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(this, "No se encontro la habitacion");
-        }
+        if(!this.jTextFieldHabitacion.getText().equals("")){
+            String query = "Select * from registros where habitacion = '" + this.jTextFieldHabitacion.getText().trim() + "'";
+
+            this.conn.Consult(query);
+            try{
+                this.jTextFieldNombre.setText(this.conn.rs.getString(6));
+                this.jTextFieldTipoHab.setText(this.conn.rs.getString(2));
+                this.costo = this.conn.rs.getInt(3);
+                this.ciudad = this.conn.rs.getString(7);
+                this.fechaIn= this.conn.rs.getString(8);
+                this.fechaSa = this.conn.rs.getString(9);
+                this.nombre = this.jTextFieldNombre.getText().trim();
+                this.tipoHab = this.jTextFieldTipoHab.getText().trim();
+                this.numHab = this.jTextFieldHabitacion.getText().trim();
+                this.ex = this.conn.rs.getInt(5);
+            }catch(SQLException ex){
+                JOptionPane.showMessageDialog(this, "No se encontro la habitacion o el valor ingresado no se permite!");
+            }
+        }else
+            JOptionPane.showMessageDialog(this, "campo de habitacion vacio!");
     }//GEN-LAST:event_jButtonComprobarActionPerformed
 
     private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
         // TODO add your handling code here:
+        if(!this.jTextFieldHabitacion.getText().equals("") && !this.jTextFieldNombre.getText().equals("")){
+            total=0;
+            totalS=0;
 
-        
-        if(this.jCheckBoxServCuarto.isSelected())
-            total += 250;
-        if(this.jCheckBoxServBar.isSelected())
-            total += 800;
-        if(this.jCheckBoxServNiñera.isSelected())
-            total += 700;
-        if(this.jCheckBoxServTinto.isSelected())
-            total += 180;
-        if(this.jCheckBoxServSpa.isSelected())
-            total += 600;
-        if(this.jCheckBoxServBuffet.isSelected())
-            total += 300;
-        
-       
-        try {
-           ex = this.conn.rs.getInt(5);
-           if( ex > 0 )
-            total += (ex * 200);
-        } catch (SQLException ex1) {
-        }
-        
-        
-        
-        String query2 = "Select TIMESTAMPDIFF(day,(Select fechaEntrada from registros where habitacion = '"+ this.jTextFieldHabitacion.getText().trim() + "'), (Select fechaSalida from registros where habitacion = '"+ this.jTextFieldHabitacion.getText().trim() + "')) ";
-        
-        this.conn.Consult(query2);
-        
-        
-        
-        try {
-            dias = this.conn.rs.getInt(1);
-        } catch (SQLException ex1) {
-        }
-        
-        if("Sencilla".equals(this.tipoHab)){
-            total += (dias*800);
-            totalS = (dias*800);
-        }else if("Doble".equals(this.tipoHab)){
-            total += (dias*1200);
-            totalS = (dias*1200);
-        }else if("Triple".equals(this.tipoHab)){
-            total += (dias*1600);
-            totalS = (dias*1600);
-        }
-        
-        
-        this.jTextFieldMontoPagar.setText(total+"");
+            if(this.jCheckBoxServCuarto.isSelected())
+                total += 250;
+            if(this.jCheckBoxServBar.isSelected())
+                total += 800;
+            if(this.jCheckBoxServNiñera.isSelected())
+                total += 700;
+            if(this.jCheckBoxServTinto.isSelected())
+                total += 180;
+            if(this.jCheckBoxServSpa.isSelected())
+                total += 600;
+            if(this.jCheckBoxServBuffet.isSelected())
+                total += 300;
+
+
+            
+            if( ex > 0 )
+                total += (ex * 200);
+            
+
+
+
+            String query2 = "Select TIMESTAMPDIFF(day,(Select fechaEntrada from registros where habitacion = '"+ this.jTextFieldHabitacion.getText().trim() + "'), (Select fechaSalida from registros where habitacion = '"+ this.jTextFieldHabitacion.getText().trim() + "')) ";
+
+            this.conn.Consult(query2);
+
+
+
+            try {
+                dias = this.conn.rs.getInt(1);
+            } catch (SQLException ex1) {
+            }
+
+            if("Sencilla".equals(this.tipoHab)){
+                total += (dias*800);
+                totalS = (dias*800);
+            }else if("Doble".equals(this.tipoHab)){
+                total += (dias*1200);
+                totalS = (dias*1200);
+            }else if("Triple".equals(this.tipoHab)){
+                total += (dias*1600);
+                totalS = (dias*1600);
+            }
+
+
+            this.jTextFieldMontoPagar.setText(total+"");
+        }else
+            JOptionPane.showMessageDialog(this, "Aun no se busca/encuentra una habitacion!");
     }//GEN-LAST:event_jButtonCalcularActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalidaActionPerformed
         // TODO add your handling code here:
         
-        Date fecha = new Date();
-        SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
-        String query = "insert into ingresos VALUES ( id ,'" + this.jTextFieldMontoPagar.getText().trim() + "')";
-        this.conn.Update(query);
-        query = "delete from registros where habitacion = " + this.jTextFieldHabitacion.getText().trim();
-        this.conn.Update(query);
-        query = "UPDATE habitaciones SET estado = 'Descupada'  WHERE habitacion = " + this.numHab;
-        this.conn.Update(query);
-        int i = 2;
-        try (PDDocument document = new PDDocument()) {
-            PDPage page = new PDPage(PDRectangle.A6);
-            document.addPage(page);
-            
-            PDPageContentStream contentStream = new PDPageContentStream(document, page);
-          
-            PDImageXObject image = PDImageXObject.createFromFile("src/imagenes/gowa.jpg", document);
-            
-            contentStream.drawImage(image, 95 , 370, image.getWidth() / 3, image.getHeight() / 3);
-            
-            image = PDImageXObject.createFromFile("src/imagenes/firma.png", document);
-            
-            contentStream.drawImage(image, 95 , 15, image.getWidth() / 3, image.getHeight() / 3);
-            
-            // Text
-            
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - 50);
-            contentStream.showText("GOWA Hotel");
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+15));
-            contentStream.showText("Sueños pesados, costos ligeros");
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
-            contentStream.showText("Blvd. Kukulcan Km 7.5, Punta Cancun, 77500 Cancún, Q.R.");
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
-            contentStream.showText("Fecha: " + form.format(fecha));
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
-            contentStream.showText("Nombre del huésped: " + this.nombre);
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
-            contentStream.showText("Ciudad de origen: " + this.ciudad );
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
-            contentStream.showText("Fecha de ingreso: " + this.fechaIn );
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
-            contentStream.showText("Fecha de salida: " + this.fechaSa );
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
-            contentStream.showText("Tipo de habitación: " + this.tipoHab );
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
-            contentStream.showText("Costo de habitacion: " + this.costo );
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
-            contentStream.showText("Días que se quedo en el hotel: " + this.dias );
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() -(50+(15*i++)));
-            contentStream.showText("Total a pagar sin cargos extra: " + this.totalS );
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
-            contentStream.showText("Total a pagar con cargos extra: " + this.total );
-            contentStream.endText();
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
-            contentStream.showText("Lista de cargos extra:");
-            contentStream.endText();
-            if(this.ex>0){
+        if(!this.jTextFieldMontoPagar.getText().equals("")){
+            Date fecha = new Date();
+            SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
+            String query = "insert into ingresos VALUES ( id ,'" + this.jTextFieldMontoPagar.getText().trim() + "')";
+            this.conn.Update(query);
+            query = "delete from registros where habitacion = " + this.jTextFieldHabitacion.getText().trim();
+            this.conn.Update(query);
+            query = "UPDATE habitaciones SET estado = 'Descupada'  WHERE habitacion = " + this.numHab;
+            this.conn.Update(query);
+            int i = 2;
+            try (PDDocument document = new PDDocument()) {
+                PDPage page = new PDPage(PDRectangle.A6);
+                document.addPage(page);
+
+                PDPageContentStream contentStream = new PDPageContentStream(document, page);
+
+                PDImageXObject image = PDImageXObject.createFromFile("src/imagenes/gowa.jpg", document);
+
+                contentStream.drawImage(image, 95 , 370, image.getWidth() / 3, image.getHeight() / 3);
+
+                image = PDImageXObject.createFromFile("src/imagenes/firma.png", document);
+
+                contentStream.drawImage(image, 95 , 15, image.getWidth() / 3, image.getHeight() / 3);
+
+                // Text
+
                 contentStream.beginText();
                 contentStream.setFont(PDType1Font.COURIER, 8);
-                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
-                contentStream.showText("Cargo por personas extra: " + (this.ex * 200));
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - 50);
+                contentStream.showText("GOWA Hotel");
                 contentStream.endText();
-            }
-            if(this.jCheckBoxServCuarto.isSelected()){
                 contentStream.beginText();
                 contentStream.setFont(PDType1Font.COURIER, 8);
-                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
-                contentStream.showText("Cargo por servicio al cuarto: 250");
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+15));
+                contentStream.showText("Sueños pesados, costos ligeros");
                 contentStream.endText();
-            }
-            
-            if(this.jCheckBoxServBar.isSelected()){
                 contentStream.beginText();
                 contentStream.setFont(PDType1Font.COURIER, 8);
-                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
-                contentStream.showText("Cargo por servicio de bar: 800");
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Blvd. Kukulcan Km 7.5, Punta Cancun, 77500 Cancún, Q.R.");
                 contentStream.endText();
-            }
-            
-            if(this.jCheckBoxServNiñera.isSelected()){
                 contentStream.beginText();
                 contentStream.setFont(PDType1Font.COURIER, 8);
-                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
-                contentStream.showText("Cargo por servicio de niñera/Guarderia: 700");
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Fecha: " + form.format(fecha));
                 contentStream.endText();
-            }
-            if(this.jCheckBoxServTinto.isSelected()){
                 contentStream.beginText();
                 contentStream.setFont(PDType1Font.COURIER, 8);
-                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
-                contentStream.showText("Cargo por servicio de tintoreria: 180");
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Nombre del huésped: " + this.nombre);
                 contentStream.endText();
-            }
-            if(this.jCheckBoxServSpa.isSelected()){
                 contentStream.beginText();
                 contentStream.setFont(PDType1Font.COURIER, 8);
-                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
-                contentStream.showText("Cargo por servicio de spa: 600");
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Ciudad de origen: " + this.ciudad );
                 contentStream.endText();
-            }
-            if(this.jCheckBoxServBuffet.isSelected()){
                 contentStream.beginText();
                 contentStream.setFont(PDType1Font.COURIER, 8);
-                contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
-                contentStream.showText("Cargo por servicio de buffet: 300");
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Fecha de ingreso: " + this.fechaIn );
                 contentStream.endText();
-            }
-            
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.COURIER, 8);
-            contentStream.newLineAtOffset(50, 5);
-            contentStream.showText("Gracias por preferirnos, vuelva pronto!!");
-            contentStream.endText();
-            contentStream.close();
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Fecha de salida: " + this.fechaSa );
+                contentStream.endText();
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Tipo de habitación: " + this.tipoHab );
+                contentStream.endText();
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Costo de habitacion: " + this.costo );
+                contentStream.endText();
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Días que se quedo en el hotel: " + this.dias );
+                contentStream.endText();
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() -(50+(15*i++)));
+                contentStream.showText("Total a pagar sin cargos extra: " + this.totalS );
+                contentStream.endText();
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Total a pagar con cargos extra: " + this.total );
+                contentStream.endText();
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(10, page.getMediaBox().getHeight() - (50+(15*i++)));
+                contentStream.showText("Lista de cargos extra:");
+                contentStream.endText();
+                if(this.ex>0){
+                    contentStream.beginText();
+                    contentStream.setFont(PDType1Font.COURIER, 8);
+                    contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                    contentStream.showText("Cargo por personas extra: " + (this.ex * 200));
+                    contentStream.endText();
+                }
+                if(this.jCheckBoxServCuarto.isSelected()){
+                    contentStream.beginText();
+                    contentStream.setFont(PDType1Font.COURIER, 8);
+                    contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                    contentStream.showText("Cargo por servicio al cuarto: 250");
+                    contentStream.endText();
+                }
+
+                if(this.jCheckBoxServBar.isSelected()){
+                    contentStream.beginText();
+                    contentStream.setFont(PDType1Font.COURIER, 8);
+                    contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                    contentStream.showText("Cargo por servicio de bar: 800");
+                    contentStream.endText();
+                }
+
+                if(this.jCheckBoxServNiñera.isSelected()){
+                    contentStream.beginText();
+                    contentStream.setFont(PDType1Font.COURIER, 8);
+                    contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                    contentStream.showText("Cargo por servicio de niñera/Guarderia: 700");
+                    contentStream.endText();
+                }
+                if(this.jCheckBoxServTinto.isSelected()){
+                    contentStream.beginText();
+                    contentStream.setFont(PDType1Font.COURIER, 8);
+                    contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                    contentStream.showText("Cargo por servicio de tintoreria: 180");
+                    contentStream.endText();
+                }
+                if(this.jCheckBoxServSpa.isSelected()){
+                    contentStream.beginText();
+                    contentStream.setFont(PDType1Font.COURIER, 8);
+                    contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                    contentStream.showText("Cargo por servicio de spa: 600");
+                    contentStream.endText();
+                }
+                if(this.jCheckBoxServBuffet.isSelected()){
+                    contentStream.beginText();
+                    contentStream.setFont(PDType1Font.COURIER, 8);
+                    contentStream.newLineAtOffset(30, page.getMediaBox().getHeight() - (50+(15*i++)));
+                    contentStream.showText("Cargo por servicio de buffet: 300");
+                    contentStream.endText();
+                }
+
+                contentStream.beginText();
+                contentStream.setFont(PDType1Font.COURIER, 8);
+                contentStream.newLineAtOffset(50, 5);
+                contentStream.showText("Gracias por preferirnos, vuelva pronto!!");
+                contentStream.endText();
+                contentStream.close();
 
 
-            document.save("ticket.pdf");
-        } catch (IOException ex) {
-        }
-        dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+                document.save("ticket.pdf");
+            } catch (IOException ex) {
+            }
+            dispose();
+        }else
+            JOptionPane.showMessageDialog(this, "Calcula primero el monto a pagar!");
+    }//GEN-LAST:event_jButtonSalidaActionPerformed
 
 
     
@@ -468,9 +480,9 @@ public class Salida extends javax.swing.JInternalFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonCalcular;
     private javax.swing.JButton jButtonComprobar;
+    private javax.swing.JButton jButtonSalida;
     private javax.swing.JCheckBox jCheckBoxServBar;
     private javax.swing.JCheckBox jCheckBoxServBuffet;
     private javax.swing.JCheckBox jCheckBoxServCuarto;

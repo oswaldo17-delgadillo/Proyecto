@@ -7,6 +7,8 @@ package proyecto;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -14,13 +16,13 @@ import javax.swing.JPanel;
  *
  * @author osba_
  */
-public class pantallaInicial extends javax.swing.JFrame {
+public class PantallaInicial extends javax.swing.JFrame {
     FondoPanel fondo=new FondoPanel();
     
     /**
      * Creates new form pantallaInicial
      */
-    public pantallaInicial() {
+    public PantallaInicial() {
         this.setContentPane(fondo);
         //fondo.setVisible(true);
         initComponents();
@@ -48,11 +50,15 @@ public class pantallaInicial extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jButtonSiguienteVentana = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
-        jButtonPause = new javax.swing.JButton();
-        jButtonPlay = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
+        jLabelFecha = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(51, 255, 204));
 
@@ -78,7 +84,7 @@ public class pantallaInicial extends javax.swing.JFrame {
         jLabel7.setText("Valdez Rodriguez Luis Adrian");
 
         jLabel8.setFont(new java.awt.Font("Kristen ITC", 0, 14)); // NOI18N
-        jLabel8.setText("222222");
+        jLabel8.setText("277250");
 
         jLabel9.setFont(new java.awt.Font("Kristen ITC", 0, 14)); // NOI18N
         jLabel9.setText("270376");
@@ -99,65 +105,49 @@ public class pantallaInicial extends javax.swing.JFrame {
         jButtonSalir.setText("Salir");
         jButtonSalir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButtonPause.setFont(new java.awt.Font("Kristen ITC", 0, 11)); // NOI18N
-        jButtonPause.setText("PAUSE");
-
-        jButtonPlay.setFont(new java.awt.Font("Kristen ITC", 0, 11)); // NOI18N
-        jButtonPlay.setText("PLAY");
-
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo.png"))); // NOI18N
+
+        jLabelFecha.setFont(new java.awt.Font("Kristen ITC", 0, 14)); // NOI18N
+        jLabelFecha.setText(" ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(126, 126, 126)
-                .addComponent(jButtonSalir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonSiguienteVentana)
-                .addGap(97, 97, 97))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(241, 241, 241)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonPause, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonPlay, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(118, 118, 118)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel1))
-                .addGap(105, 105, 105)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel4))
-                .addContainerGap(143, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(jButtonSalir)
+                        .addGap(126, 126, 126)
+                        .addComponent(jButtonSiguienteVentana))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(213, 213, 213)
+                        .addComponent(jLabel11))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabelFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(105, 105, 105)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel4))))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButtonPause, jButtonPlay});
-
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(241, 241, 241)
-                        .addComponent(jButtonPause)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonPlay))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(jLabel11)))
-                .addGap(112, 112, 112)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel11)
+                .addGap(66, 66, 66)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
@@ -178,33 +168,43 @@ public class pantallaInicial extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jLabel10))
                 .addGap(18, 18, 18)
+                .addComponent(jLabelFecha)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonSiguienteVentana)
-                    .addComponent(jButtonSalir))
+                    .addComponent(jButtonSalir)
+                    .addComponent(jButtonSiguienteVentana))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButtonPause, jButtonPlay});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 22, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSiguienteVentanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSiguienteVentanaActionPerformed
-        presentacionHotel fra=new presentacionHotel();
+        Login fra=new Login();
         fra.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonSiguienteVentanaActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        SimpleDateFormat fmt = new SimpleDateFormat("dd-MM-yyyy");
+        Date dia = new Date();
+        this.jLabelFecha.setText("Fecha: " + fmt.format(dia));
+        
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -223,27 +223,26 @@ public class pantallaInicial extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(pantallaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(pantallaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(pantallaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(pantallaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pantallaInicial().setVisible(true);
+                new PantallaInicial().setVisible(true);
             }
         });
     }
              
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonPause;
-    private javax.swing.JButton jButtonPlay;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JButton jButtonSiguienteVentana;
     private javax.swing.JLabel jLabel1;
@@ -257,6 +256,7 @@ public class pantallaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelFecha;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
     class FondoPanel extends JPanel{
